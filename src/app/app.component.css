@@ -1,0 +1,93 @@
+/* Estilos para el encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .nav-menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu li {
+    margin: 0;
+  }
+  
+  .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #00aaff;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    width: 250px;
+  }
+  
+  .search-bar input::placeholder {
+    color: #ccc;
+  }
+  
+  .cart-icon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cart-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .cart-icon:hover img {
+    opacity: 0.8;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+  }
+  
+  .main-content {
+    padding: 60px 20px 20px;
+  }
+  

@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "nombre": "Chanel No. 5",
+      "descripcion": "Un clásico atemporal con notas de flor de jazmín y rosa.",
+      "precio": 120,
+      "imagen": "assets/img/nro5.jpeg"
+    },
+    {
+      "id": 2,
+      "nombre": "Dior Sauvage",
+      "descripcion": "Un perfume fresco y especiado de bergamota y pimienta negra.",
+      "precio": 95,
+      "imagen": "assets/img/dior.jpeg"
+    },
+    {
+      "id": 3,
+      "nombre": "Yves Saint Laurent Black Opium",
+      "descripcion": "Una fragancia cálida con notas de café, vainilla y flor de azahar.",
+      "precio": 105,
+      "imagen": "assets/img/Yves.jpeg"
+    },
+    {
+      "id": 4,
+      "nombre": "Gucci Bloom",
+      "descripcion": "Una fragancia floral con notas de jazmín y flor de tuberosa.",
+      "precio": 110,
+      "imagen": "assets/img/gucci.jpeg"
+    },
+    {
+      "id": 5,
+      "nombre": "Acqua di Gio Profumo",
+      "descripcion": "Una fragancia acuática y amaderada con notas de incienso y pachulí.",
+      "precio": 130,
+      "imagen": "assets/img/gio.jpeg"
+    },
+    {
+      "id": 6,
+      "nombre": "Dolce & Gabbana Light Blue",
+      "descripcion": "Un perfume fresco y afrutado con notas de limón y manzana verde.",
+      "precio": 85,
+      "imagen": "assets/img/dolce.jpeg"
+    },
+    {
+      "id": 7,
+      "nombre": "Marc Jacobs Daisy",
+      "descripcion": "Una fragancia floral con notas de fresia y pétalos de jazmín.",
+      "precio": 90,
+      "imagen": "assets/img/marc.jpeg"
+    },
+    {
+      "id": 8,
+      "nombre": "Hermès Terre d’Hermès",
+      "descripcion": "Una fragancia terrosa con notas de madera de cedro y vetiver.",
+      "precio": 125,
+      "imagen": "assets/img/terre.jpeg"
+    },
+    {
+      "id": 9,
+      "nombre": "Prada Candy",
+      "descripcion": "Un perfume dulce y adictivo con notas de caramelo y vainilla.",
+      "precio": 100,
+      "imagen": "assets/img/candy.jpeg"
+    },
+    {
+      "id": 10,
+      "nombre": "Jean Paul Gaultier Le Male",
+      "descripcion": "Una fragancia cálida con notas de lavanda, menta y vainilla.",
+      "precio": 95,
+      "imagen": "assets/img/jean.jpeg"
+    }
+  ]
+  

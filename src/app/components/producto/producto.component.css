@@ -1,0 +1,53 @@
+/* Estilos para la tarjeta del producto */
+.producto {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px;
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Tamaño uniforme para todas las imágenes */
+.producto img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Estilos para el título */
+.producto h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Estilos para la descripción */
+.producto > p {
+  color: #555;
+  text-align: start;
+  margin-bottom: 15px;
+  font-size: 10px;
+}
+
+/* Estilos para el botón */
+.producto button {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.producto button:hover {
+  background-color: #218838;
+}

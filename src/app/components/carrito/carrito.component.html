@@ -1,0 +1,116 @@
+<!-- Icono del carrito con contador -->
+<div class="cart-icon" (click)="mostrarCarrito()">
+  <img src="../../../assets/img/compras.png"alt="Carrito" width="30">
+  <span class="cart-count">{{ productosCarrito.length }}</span>
+</div>
+
+<!-- Modal para mostrar el carrito -->
+<div *ngIf="carritoVisible" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarCarrito()">&times;</span>
+
+    <!-- Carrito en forma de tabla -->
+    <table>
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Costo</th>
+          <th>Subtotal</th>
+          <th>Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productosCarrito">
+          <td><img [src]="producto.imagen" alt="{{ producto.nombre }}" width="50"></td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.descripcion }}</td>
+          <td>
+            <button (click)="disminuirCantidad(producto)">-</button>
+            {{ producto.cantidad }}
+            <button (click)="aumentarCantidad(producto)">+</button>
+          </td>
+          <td>{{ producto.precio | currency }}</td>
+          <td>{{ producto.precio * producto.cantidad | currency }}</td>
+          <td><button (click)="eliminarDelCarrito(producto)">Eliminar</button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">Total:</td>
+          <td>{{ calcularTotal() | currency }}</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Botones para procesar o cancelar la compra -->
+    <div class="carrito-buttons">
+      <button (click)="procesarCompra()">Procesar Compra</button>
+      <button (click)="vaciarCarrito()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para el formulario de pago -->
+<div *ngIf="formularioVisible" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarFormulario()">&times;</span>
+    <h2>Formulario de Pago</h2>
+    <form (ngSubmit)="enviarFormulario()">
+      <div>
+        <label for="metodoPago">Método de Pago:</label>
+        <select id="metodoPago" [(ngModel)]="datosCompra.metodoPago" name="metodoPago" required>
+          <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+          <option value="qr">Código QR</option>
+        </select>
+      </div>
+      <div *ngIf="datosCompra.metodoPago === 'tarjeta'">
+        <div>
+          <label for="numeroTarjeta">Número de Tarjeta:</label>
+          <input id="numeroTarjeta" type="number" [(ngModel)]="datosCompra.numeroTarjeta" name="numeroTarjeta" required>
+        </div>
+        <div>
+          <label for="codigoSeguridad">Código de Seguridad:</label>
+          <input id="codigoSeguridad" type="number" [(ngModel)]="datosCompra.codigoSeguridad" name="codigoSeguridad"
+            required>
+        </div>
+        <div>
+          <label for="fechaExpiracion">Fecha de Expiración:</label>
+          <input id="fechaExpiracion" type="date" [(ngModel)]="datosCompra.fechaExpiracion" name="fechaExpiracion"
+            required>
+        </div>
+      </div>
+      <div *ngIf="datosCompra.metodoPago === 'qr'">
+        <p>Escanee el código QR para completar el pago.</p>
+        <img src="./../../../assets/img/programador.png" alt="Código QR" class="qr-image">
+      </div>
+      <div>
+        <label for="direccionEnvio">Dirección de Envío:</label>
+        <input id="direccionEnvio" type="text" [(ngModel)]="datosCompra.direccionEnvio" name="direccionEnvio" required>
+      </div>
+      <div>
+        <label for="correoConfirmacion">Correo Electrónico:</label>
+        <input id="correoConfirmacion" type="email" [(ngModel)]="datosCompra.correoConfirmacion"
+          name="correoConfirmacion" required>
+      </div>
+      <div>
+        <p>Monto Total a Pagar: {{ calcularTotal() | currency }}</p>
+      </div>
+      <div class="btn-container">
+        <button type="submit">Pagar</button>
+        <button type="button" (click)="cerrarFormulario()">Cancelar</button>
+      </div>
+    </form>
+
+    <!-- Mensaje de compra exitosa -->
+    <div *ngIf="compraExitosa" class="compra-exitosa">
+      <h3>Compra Procesada con Éxito</h3>
+      <p>Gracias por tu compra. Se ha enviado una confirmación a su correo electrónico.</p>
+      <p>Correo de Confirmación: {{ datosCompra.correoConfirmacion }}</p>
+      <button (click)="volverAlMenu()">Salir</button>
+    </div>
+  </div>
+</div>
